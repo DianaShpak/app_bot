@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 env:
   DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
