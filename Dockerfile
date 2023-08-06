@@ -14,7 +14,7 @@ COPY . /opt/gatling/src/
 
 WORKDIR /opt/gatling/src
 
-RUN mvn -s install
+RUN #mvn -s install
 RUN mvn -s dependency:go-offline gatling:test -Dgatling.simulationClass=simulation.TestSimulation -Dgatling.charting.noReports=true
 
 RUN chmod -R 777 /opt
