@@ -9,17 +9,11 @@ ENV Log4jFileName /opt/gatling/results/gatling.log
 RUN mkdir -p  /opt/gatling
 RUN pwd
 RUN ls -al
-
 COPY . /opt/gatling/src/
-
 WORKDIR /opt/gatling/src/
 
 RUN mvn -X  install
-
-WORKDIR /opt/gatling/src
-
-
-#RUN mvn dependency:go-offline gatling:test -Dgatling.simulationClass=simulation.TestSimulation -Dgatling.charting.noReports=true
+RUN mvn dependency:go-offline gatling:test -Dgatling.simulationClass=simulation.TestSimulation -Dgatling.charting.noReports=true
 
 RUN chmod -R 777 /opt
 RUN chmod -R 777 /opt/gatling
