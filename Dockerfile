@@ -12,7 +12,7 @@ RUN ls -al
 
 COPY . /opt/gatling/src/
 
-WORKDIR /opt/gatling
+WORKDIR /opt/gatling/src/
 
 RUN mvn -X  install
 
