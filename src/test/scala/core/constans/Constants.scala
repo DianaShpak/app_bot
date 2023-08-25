@@ -12,7 +12,6 @@ object Constants {
   val ipConsul = "ipConsul"
   val portConsul = "portConsul"
   val value = "Value"
-  val countPlayers = "countPlayers"
   val timestamp = "timestamp"
   val authentication = "authentication"
   val data = "data"

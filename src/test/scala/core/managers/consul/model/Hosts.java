@@ -1,22 +1,14 @@
 package core.managers.consul.model;
 
 public class Hosts {
+    private String app;
+    private String consul;
 
-    private String emul;
-
-    public String getEmul() {
-        return emul;
+    public String getApp() {
+        return app;
     }
 
-    public void setEmul(String emul) {
-        this.emul = emul;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Hosts{" +
-                "emul='" + emul + '\'' +
-                '}';
+    public String getConsul() {
+        return consul;
     }
 }

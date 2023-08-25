@@ -4,7 +4,6 @@
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy/MM/dd HH:mm:ss:SSS}|%p||autotests||${instance_id}|%logger{0}|%m%n</pattern>
-            <!--            <pattern>%d{yyyy/MM/dd HH:mm:ss:SSS}|%p||autotests||abraKadabra|%logger{0}|%m%n</pattern>-->
         </encoder>
         <immediateFlush>true</immediateFlush>
     </appender>
@@ -19,40 +18,19 @@
         <!--        <file>./log/loadTest.log</file>-->
         <encoder>
             <pattern>%d{yyyy/MM/dd HH:mm:ss:SSS}|%p||autotests||${instance_id}|%logger{0}|%m%n</pattern>
-            <!--            <pattern>%d{yyyy/MM/dd HH:mm:ss:SSS}|%p||autotests||abraKadabra|%logger{0}|%m%n</pattern>-->
         </encoder>
         <immediateFlush>true</immediateFlush>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${Log4jFileName}_%d{yyyy-MM-dd}_%i.log</fileNamePattern>
-            <!--            <fileNamePattern>./log/loadTest_%d{yyyy-MM-dd}_%i.log</fileNamePattern>-->
             <maxFileSize>9MB</maxFileSize>
         </rollingPolicy>
     </appender>
     <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
-        <!--<queueSize>1024</queueSize>-->
         <discardingThreshold>0</discardingThreshold>
         <appender-ref ref="FILE"/>
     </appender>
 
-    <!-- Uncomment for logging ALL HTTP request and responses -->
-    <!-- 	<logger name="io.gatling.http.ahc" level="TRACE" /> -->
-    <!--    <logger name="io.gatling.http.response" level="TRACE" /> -->
-    <!-- Uncomment for logging ONLY FAILED HTTP request and responses -->
-
-    <!--    <logger name="io.gatling" level="DEBUG"/>-->
-    <!--    &lt;!&ndash;    <logger name="io.gatling" level="WARN"/>&ndash;&gt;-->
-    <!--    <logger name="simulation" level="DEBUG"/>-->
-    <!--    <logger name="scenarios" level="DEBUG"/>-->
-    <!--    <logger name="core" level="DEBUG"/>-->
-
-    <!--    <logger name="io.gatling" level="TRACE"/>-->
-    <!--    &lt;!&ndash;    <logger name="io.gatling" level="WARN"/>&ndash;&gt;-->
-    <!--    <logger name="simulation" level="TRACE"/>-->
-    <!--    <logger name="scenarios" level="TRACE"/>-->
-    <!--    <logger name="core" level="TRACE"/>-->
-
     <logger name="io.gatling" level="INFO"/>
-    <!--    <logger name="io.gatling" level="WARN"/>-->
     <logger name="simulation" level="INFO"/>
     <logger name="scenarios" level="INFO"/>
     <logger name="core" level="INFO"/>

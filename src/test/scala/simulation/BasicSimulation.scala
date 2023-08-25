@@ -7,7 +7,7 @@ import io.gatling.core.config.GatlingConfiguration
 import io.gatling.core.controller.inject.open.OpenInjectionStep
 import io.gatling.http.protocol.HttpProtocolBuilder
 import org.slf4j.{Logger, LoggerFactory}
-import scenarios.{GameScenario, Test2}
+import scenarios.{HttpScenario1, HttpScenario2}
 
 import scala.concurrent.duration.DurationInt
 
@@ -22,13 +22,13 @@ class BasicSimulation extends Simulation {
   val defaultHeavySideUsers: OpenInjectionStep = basicSimulationUtils.defaultHeavySideUsers()
 
   preconditionScript.propUtils.getConsulProperties.getOther.getScenario match {
-    case ScenariosName.TEST2 =>
+    case ScenariosName.HTTP1 =>
       setUp(
-        new Test2(preconditionScript).test.inject(heavisideUsers(1).during(60.seconds))).protocols(httpProtocol)
+        new HttpScenario1(preconditionScript).scn.inject(defaultHeavySideUsers)).protocols(httpProtocol)
 
-    case ScenariosName.SPIN =>
+    case ScenariosName.HTTP2 =>
       setUp(
-        new GameScenario(preconditionScript).test.inject(defaultHeavySideUsers)).protocols(httpProtocol)
+        new HttpScenario2(preconditionScript).scn.inject(defaultHeavySideUsers)).protocols(httpProtocol)
 
     case _ =>
       throw new Exception("WRONG SCENARIO NAME")

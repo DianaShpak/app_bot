@@ -1,5 +1,6 @@
 package core.precondition
 
+import core.servicesClients.http.Http
 import core.utils.PropertiesUtils
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
@@ -18,12 +19,8 @@ class PreconditionScript {
 
   val customConfigFile: String = sys.props.getOrElse(GatlingCustomConfigFileOverrideSystemProperty, GatlingCustomConfigFile)
 
-  //  var redisIp: String = consulManager.getKVValue("hosts/redis")
-  //  val redisIp: String = consulManager.getClient.getAgentServices.getValue.get("redis").getAddress
 
-  //  if(consulManager.getKVValue("hosts/redis").isEmpty){
-  //  val redisIp = consulManager.getClient.getAgentServices.getValue.get("redis").getAddress
-  //  }
+  var httpClient: Http = new Http(propUtils)
 
   val httpProtocol: HttpProtocolBuilder = http
     .acceptEncodingHeader("gzip, deflate")
