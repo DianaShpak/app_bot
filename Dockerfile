@@ -1,4 +1,4 @@
-FROM 3.8.6-jdk-8
+FROM maven:3.9.2-eclipse-temurin-20-alpine
 
 ENV SERVICE_IGNORE true
 ENV PATH /opt/gatling/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
