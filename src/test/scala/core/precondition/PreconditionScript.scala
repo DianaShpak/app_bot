@@ -1,6 +1,6 @@
 package core.precondition
 
-import core.servicesClients.http.Http
+import core.servicesClients.http.HttpTestClient
 import core.utils.PropertiesUtils
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
@@ -20,7 +20,7 @@ class PreconditionScript {
   val customConfigFile: String = sys.props.getOrElse(GatlingCustomConfigFileOverrideSystemProperty, GatlingCustomConfigFile)
 
 
-  var httpClient: Http = new Http(propUtils)
+  var httpClient: HttpTestClient = new HttpTestClient(propUtils)
 
   val httpProtocol: HttpProtocolBuilder = http
     .acceptEncodingHeader("gzip, deflate")

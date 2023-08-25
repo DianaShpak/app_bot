@@ -1,7 +1,7 @@
 package scenarios
 
 import core.precondition.PreconditionScript
-import core.servicesClients.http.Http
+import core.servicesClients.http.HttpTestClient
 import io.gatling.core.Predef._
 import io.gatling.core.structure.{ChainBuilder, ScenarioBuilder}
 import org.slf4j.{Logger, LoggerFactory}
@@ -13,7 +13,7 @@ import scala.concurrent.duration.Duration
 class HttpScenario1(preconditionScript: PreconditionScript) {
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
 
-  val httpClient: Http = preconditionScript.httpClient
+  val httpClient: HttpTestClient = preconditionScript.httpClient
 
   val scn: ScenarioBuilder = scenario("#HTTP SCENARIO 1#").
     exec(
