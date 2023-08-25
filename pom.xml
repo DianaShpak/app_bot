@@ -13,11 +13,6 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>20030211.134440</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>4.4</version>
@@ -26,16 +21,6 @@
             <groupId>com.ecwid.consul</groupId>
             <artifactId>consul-api</artifactId>
             <version>1.4.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.4.0</version>
         </dependency>
         <dependency>
             <groupId>redis.clients</groupId>
@@ -67,11 +52,6 @@
             <artifactId>gatling-charts-highcharts</artifactId>
             <version>3.5.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>5.13.1</version>
-        </dependency>
     </dependencies>
     <build>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
@@ -79,7 +59,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>${scala-maven-plugin.version}</version>
+                <version>4.4.0</version>
                 <executions>
                     <execution>
                         <goals>
