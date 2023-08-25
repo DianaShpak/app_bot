@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Other {
 
-    private Boolean isBalanceTransfer;
     private String scenario;
     private Integer usersPerContainer;
     private Integer during;
@@ -17,9 +16,6 @@ public class Other {
         return during;
     }
 
-    public Boolean getBalanceTransfer() {
-        return isBalanceTransfer;
-    }
 
     public String getScenario() {
         return scenario;
@@ -30,11 +26,9 @@ public class Other {
     @Override
     public String toString() {
         return "Other{" +
-                "isBalanceTransfer=" + isBalanceTransfer +
                 "Scenario=" + scenario +
                 "usersPerContainer=" + usersPerContainer +
                 "during=" + during +
-
                 '}';
     }
 }
